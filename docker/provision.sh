@@ -75,8 +75,7 @@ prepare_install () {
     # python-software-properties contains "add-apt-repository" command for PPA conf
     sed 's/main$/main universe/' -i /etc/apt/sources.list
     apt-get update
-    apt-get install -y --no-install-recommends \
-        curl \
+    apt-get install -y \
         software-properties-common \
         apt-transport-https \
         python3-software-properties
@@ -290,24 +289,24 @@ install_extra_fonts() {
 #     apt-get install -y flashplugin-installer
 # }
 
-remove_builddeps () {
-    # WARNING: only for Docker, don't run blindly!
-    # Uninstall build dependencies.
-    apt-get remove -y --purge \
-        python3-dev \
-        libpython3.5-dev \
-        libpython3.5 \
-        libpython3.5-dev \
-        build-essential \
-        libre2-dev \
-        liblua5.2-dev \
-        zlib1g-dev \
-        libc-dev \
-        libjpeg-turbo8-dev \
-        libcurl3 \
-        gcc cpp cpp-5 binutils perl rsync && \
-    apt-get clean -y
-}
+# remove_builddeps () {
+#     # WARNING: only for Docker, don't run blindly!
+#     # Uninstall build dependencies.
+#     apt-get remove -y --purge \
+#         python3-dev \
+#         libpython3.5-dev \
+#         libpython3.5 \
+#         libpython3.5-dev \
+#         build-essential \
+#         libre2-dev \
+#         liblua5.2-dev \
+#         zlib1g-dev \
+#         libc-dev \
+#         libjpeg-turbo8-dev \
+#         libcurl3 \
+#         gcc cpp cpp-5 binutils perl rsync && \
+#     apt-get clean -y
+# }
 
 remove_extra () {
     # WARNING: only for Docker, don't run blindly!
