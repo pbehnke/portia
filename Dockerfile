@@ -7,7 +7,7 @@ ENV QT_MIRROR http://ftp.fau.de/qtproject/official_releases/qt/5.9/5.9.1/qt-open
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y build-essential libsass-dev apt-transport-https bash git curl
-RUN apt-get install nodejs npm
+RUN apt-get install -y nodejs npm
 
 COPY docker/portia.conf /app/portia.conf
 COPY docker/qt_install.qs /app/script.qs
