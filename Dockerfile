@@ -30,8 +30,8 @@ RUN /app/provision.sh prepare_install && \
     /app/provision.sh install_python_deps && \
 #    /app/provision.sh install_flash && \
     /app/provision.sh install_msfonts && \
-    /app/provision.sh install_extra_fonts && \
-    /app/provision.sh remove_builddeps && \
+    /app/provision.sh install_extra_fonts
+#    /app/provision.sh remove_builddeps && \
 #    /app/provision.sh remove_extra
 
 ADD docker/nginx /etc/nginx
