@@ -170,11 +170,11 @@ _ensure_folders () {
     chmod a+rw /builds
 }
 
-download_official_qt() {
-    _ensure_folders && \
-    curl -L -o /downloads/qt-installer.run \
-               $QT_MIRROR
-}
+# download_official_qt() {
+#     _ensure_folders && \
+#     curl -L -o /downloads/qt-installer.run \
+#                $QT_MIRROR
+# }
 
 install_official_qt () {
     # XXX: if qt version is changed, Dockerfile should be updated,
