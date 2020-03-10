@@ -1,9 +1,13 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 WORKDIR /app/slyd
 
 ENV PATH="/opt/qt59/5.9.1/gcc_64/bin:${PATH}"
 ENV DEBIAN_FRONTEND noninteractive
 ENV QT_MIRROR http://ftp.fau.de/qtproject/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run
+
+RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get install -y build-essential libsass-dev apt-transport-https apt-transport-http bash git curl
+RUN apt-get install nodejs npm
 
 COPY docker/portia.conf /app/portia.conf
 COPY docker/qt_install.qs /app/script.qs
