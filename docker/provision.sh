@@ -245,7 +245,8 @@ _ensure_folders () {
 install_python_deps(){
     # Install python-level dependencies.
     _activate_venv && \
-    ${_PYTHON} -m pip install -U pip setuptools six && \
+    ${_PYTHON} -m pip install -U pip setuptools && \
+    ${_PYTHON} -m pip install six
     ${_PYTHON} -m pip install \
         qt5reactor==0.4 \
         psutil==5.0.0 \
