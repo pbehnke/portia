@@ -91,7 +91,7 @@ install_deps () {
     # ppa:pi-rho/security is a repo for libre2-dev
     add-apt-repository -y ppa:pi-rho/security && \
     apt-get update -q && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y \
         python3 \
         python3-dev \
         python3-pip \
@@ -114,7 +114,23 @@ install_deps () {
 }
 
 install_qtwebkit_deps () {
-      apt-get install -y qml-module-qtwebkit rsync
+      apt-get install -y \
+          qml-module-qtwebkit \
+          rsync \
+          xvfb \
+          mesa-common-dev \
+          libjpeg-turbo8-dev \
+          libicu-dev \
+          libfontconfig1-dev \
+          libxml2-dev \
+          libhyphen-dev \
+          libgstreamer1.0-dev \
+          libgstreamer-plugins-base1.0-dev \
+          libgstreamer-plugins-good1.0-dev \
+          gstreamer1.0-plugins-good \
+          gstreamer1.0-x \
+          gstreamer1.0-libav \
+          webp
 #     apt-get install -y --no-install-recommends \
 #         xvfb \
 #         libjpeg-turbo8-dev \
