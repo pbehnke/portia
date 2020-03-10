@@ -130,6 +130,8 @@ install_qtwebkit_deps () {
           gstreamer1.0-plugins-good \
           gstreamer1.0-x \
           gstreamer1.0-libav \
+          libclutter-1.0-dev \
+          gir1.2-goocanvas-2.0 \
           webp
 #     apt-get install -y --no-install-recommends \
 #         xvfb \
