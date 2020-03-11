@@ -37,6 +37,7 @@ ADD docker/nginx /etc/nginx
 ADD . /app
 RUN pip install -e /app/slyd && \
     pip install -e /app/slybot
+RUN pip install -U whitenoise
 RUN python3 /app/portia_server/manage.py migrate
 RUN apt-get install -y npm emacs
 RUN /bin/bash -c "cd /app/portiaui; npm install && npm run build"
