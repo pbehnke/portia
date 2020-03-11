@@ -12,7 +12,7 @@ _run() {
 }
 
 _set_env() {
-  path='/app/portia_server:/app/slyd:/app/slybot'
+  path='/app/portia_server:/app/slyd:/app/slybot:/usr/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages'
   export PYTHONPATH="$path"
 }
 
