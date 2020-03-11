@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y build-essential libsass-dev wget curl libssl-dev pkg-config apt-utils \
   apt-transport-https bash git curl libv8-dev libclutter-1.0-dev gir1.2-goocanvas-2.0 qt5-default
-RUN apt-get install -y python3-pip python3-pyqt5 pyqt5-dev-tools qttools5-dev-tools
+RUN apt-get install -y python3-pip python3-pyqt5 pyqt5-dev-tools qttools5-dev-tools python3-pyqt5.qtwebkit
 RUN apt-get install -y libsass-dev nodejs
 
 COPY docker/portia.conf /app/portia.conf
