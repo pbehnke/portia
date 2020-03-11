@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y build-essential libsass-dev wget curl libssl-dev pkg-config apt-utils \
   apt-transport-https bash git curl libv8-dev libclutter-1.0-dev gir1.2-goocanvas-2.0 qt5-default
 RUN apt-get install -y python3-pip python3-pyqt5 pyqt5-dev-tools qttools5-dev-tools
-RUN apt-get install -y libsass-dev nodejs npm
+RUN apt-get install -y libsass-dev nodejs
 
 COPY docker/portia.conf /app/portia.conf
 COPY docker/qt_install.qs /app/script.qs
@@ -38,6 +38,8 @@ ADD . /app
 RUN pip install -e /app/slyd && \
     pip install -e /app/slybot
 RUN python3 /app/portia_server/manage.py migrate
+RUN apt-get install -y npm emacs
+RUN /bin/bash -c "cd /app/portiaui; npm install && npm run build"
 
 EXPOSE 9001
 ENTRYPOINT ["/app/docker/entry"]
