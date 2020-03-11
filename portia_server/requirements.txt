@@ -1,3 +1,4 @@
+PyQt5==5.11.3
 crochet==1.9.0
 django>=1.11.21
 django-cache-machine>=1.0.0
@@ -13,6 +14,5 @@ toposort==1.5
 whitenoise==3.3.1
 portia2code==0.0.17
 shub==2.7.0
-PyQtWebEngine
-PyQt5==5.11.3
 Twisted<16.3.0
+PyQtWebEngine
