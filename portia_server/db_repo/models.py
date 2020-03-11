@@ -46,7 +46,7 @@ class CompressedBinaryField(BinaryField):
 
 
 class Objs(Model):
-    oid = RealBinaryField(max_length=40, default=str('00'*40).decode('hex'), null=False)
+    oid = RealBinaryField(max_length=40, default=bytes.fromhex('00'*40), null=False)
     repo = CharField(max_length=64, null=False)
     type = PositiveTinyIntegerField(null=False, db_index=True)
     size = PositiveBigIntegerField(null=False, db_index=True)
