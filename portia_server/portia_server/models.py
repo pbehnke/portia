@@ -5,10 +5,8 @@ import socket
 
 from django.db.models.fields import CharField
 from django.contrib.auth.models import AnonymousUser
-from django.utils.encoding import python_2_unicode_compatible
 
 
-@python_2_unicode_compatible
 class LocalUser(AnonymousUser):
     is_active = True
     default_username = getpass.getuser()
