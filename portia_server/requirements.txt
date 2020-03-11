@@ -15,3 +15,4 @@ portia2code==0.0.17
 shub==2.7.0
 PyQtWebEngine
 PyQt5==5.11.3
+Twisted<16.3.0
