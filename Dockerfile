@@ -39,7 +39,7 @@ RUN pip install -e /app/slyd && \
     pip install -e /app/slybot
 RUN python3 /app/portia_server/manage.py migrate
 RUN apt-get install -y npm emacs
-RUN /bin/bash -c "cd /app/portiaui; npm install && npm run build"
+RUN /bin/bash -c "cd /app/portiaui; npm install && node_modules/bower/bin/bower --allow-root install && node_modules/ember-cli/bin/ember build -e production"
 
 EXPOSE 9001
 ENTRYPOINT ["/app/docker/entry"]
