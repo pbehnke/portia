@@ -19,6 +19,7 @@ class EggInfo(object):
         self._write_file('dependency_links.txt', self.build_dependency())
         self._write_file('entry_points.txt', self.build_entry_points())
         self._write_file('top_level.txt', self.build_top_level())
+        self._write_file('__init__.py', "")
         self._write_file('zip-safe', self.build_zip_safe())
 
     def _write_file(self, filename, contents):
